@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/data/data/com.termux/files/home/cpp/PhysicsAnimation/build",
+  "command": "/data/data/com.termux/files/usr/bin/c++  -I/data/data/com.termux/files/home/cpp/PhysicsAnimation/./include/svpng -I/data/data/com.termux/files/home/cpp/PhysicsAnimation/./include -O2 -g -DNDEBUG -o CMakeFiles/Phy-Animation.dir/src/Render.cpp.o -c /data/data/com.termux/files/home/cpp/PhysicsAnimation/src/Render.cpp",
+  "file": "/data/data/com.termux/files/home/cpp/PhysicsAnimation/src/Render.cpp",
+  "output": "CMakeFiles/Phy-Animation.dir/src/Render.cpp.o"
+},
+{
+  "directory": "/data/data/com.termux/files/home/cpp/PhysicsAnimation/build",
+  "command": "/data/data/com.termux/files/usr/bin/c++  -I/data/data/com.termux/files/home/cpp/PhysicsAnimation/./include/svpng -I/data/data/com.termux/files/home/cpp/PhysicsAnimation/./include -O2 -g -DNDEBUG -o CMakeFiles/Phy-Animation.dir/src/main.cpp.o -c /data/data/com.termux/files/home/cpp/PhysicsAnimation/src/main.cpp",
+  "file": "/data/data/com.termux/files/home/cpp/PhysicsAnimation/src/main.cpp",
+  "output": "CMakeFiles/Phy-Animation.dir/src/main.cpp.o"
+},
+{
+  "directory": "/data/data/com.termux/files/home/cpp/PhysicsAnimation/build",
+  "command": "/data/data/com.termux/files/usr/bin/c++  -I/data/data/com.termux/files/home/cpp/PhysicsAnimation/./include/svpng -I/data/data/com.termux/files/home/cpp/PhysicsAnimation/./include -O2 -g -DNDEBUG -o CMakeFiles/Phy-Animation.dir/src/svpng/svpng.cpp.o -c /data/data/com.termux/files/home/cpp/PhysicsAnimation/src/svpng/svpng.cpp",
+  "file": "/data/data/com.termux/files/home/cpp/PhysicsAnimation/src/svpng/svpng.cpp",
+  "output": "CMakeFiles/Phy-Animation.dir/src/svpng/svpng.cpp.o"
+}
+]
