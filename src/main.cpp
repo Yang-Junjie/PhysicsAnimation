@@ -4,6 +4,7 @@
 #include "Rasterizer.hpp"
 using namespace std;
 
+
 int main()
 {
     Render render(256, 256);
@@ -12,6 +13,8 @@ int main()
     string open_command = "termux-open ";
     string command = open_command + string(path);
     render.createFile(path);
+    rasterizer.DrawCircle(128, 128, 50, 0, 255, 0);
+    
     rasterizer.DrawLine(10,10,100,100,255,0,0);
     render.saveFile();
     cout << "Hello PhysicsAnimation" << endl;
