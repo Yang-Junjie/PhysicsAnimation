@@ -1,4 +1,5 @@
 #include "Rasterizer.hpp"
+#include "Vec2.hpp"
 #include <cmath>
 Rasterizer::Rasterizer(Render* render)
     : m_render(render)
@@ -57,6 +58,28 @@ void Rasterizer::DrawCircle(
     }
 }
 
+void Rasterizer::DrawTriangle(int x1, int y1, int x2, int y2, int x3, int y3,
+    unsigned int r,
+    unsigned int g,
+    unsigned int b,
+    unsigned int a)
+{
+    Vec2 v1(x1, y1);
+    Vec2 v2(x2, y2);
+    Vec2 v3(x3, y3);
+    int the_max_x = fmax(fmax(x1, x2), x3);
+    int the_max_y = fmax(fmax(y1, y2), y3);
+    int the_min_x = fmin(fmin(x1, x2), x3);
+    int the_min_y = fmin(fmin(y1, y2), y3);
+    for (int i = the_min_x; i < the_max_x; i++) {
+        for (int j = the_min_y; j < the_max_y; j++) {
+            Vec2 P(i, j);
+            if (inside(v1, v2, v3, P)) {
+                setPixel(i, j, r, g, b, a);
+            }
+        }
+    }
+}
 void Rasterizer::setPixel(
     int x, int y,
     unsigned int r, unsigned int g,
@@ -81,4 +104,14 @@ void Rasterizer::setCirclePoints(
     setPixel(cx + y, cy - x, r, g, b, a);
     setPixel(cx - y, cy - x, r, g, b, a);
 }
-
+bool Rasterizer::inside(const Vec2& v1, const Vec2& v2, const Vec2& v3, const Vec2& p)
+{
+    double cross1 = (v1 - v2).cross(v1 - p);
+    double cross2 = (v2 - v3).cross(v2 - p);
+    double cross3 = (v3 - v1).cross(v3 - p);
+    bool has_neg = (cross1 < 0 || cross2 < 0 || cross3 < 0);
+    bool has_pos = (cross1 > 0 || cross2 > 0 || cross3 > 0);
+    if (has_neg && has_pos)
+        return false;
+    return true;
+}
