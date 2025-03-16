@@ -28,7 +28,23 @@ public:
     bool operator==(const Vec2& other) const;
     bool operator!=(const Vec2& other) const;
 
+    void setValue(double x,double y);
+    void clear();
+
     double cross(const Vec2& other) const;
+    static inline double cross(const Vec2& v1,const Vec2& v2);
+    double dot(const Vec2& other)const;
+    static inline double dot(const Vec2& v1,const Vec2& v2);
+
+    double getLength()const;
+    static inline double getLength(const Vec2& v);
+    double getDistance(const Vec2& other)const;
+    static inline double getDistance(const Vec2& v1,const Vec2& v2);
+
+    void normalization();
+    static inline void normalization(Vec2& v); 
+    
 };
+
 
 #endif
