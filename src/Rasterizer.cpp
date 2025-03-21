@@ -71,8 +71,8 @@ void Rasterizer::DrawTriangle(int x1, int y1, int x2, int y2, int x3, int y3,
     int the_max_y = fmax(fmax(y1, y2), y3);
     int the_min_x = fmin(fmin(x1, x2), x3);
     int the_min_y = fmin(fmin(y1, y2), y3);
-    for (int i = the_min_x; i < the_max_x; i++) {
-        for (int j = the_min_y; j < the_max_y; j++) {
+    for (int i = the_min_x; i <= the_max_x; i++) {
+        for (int j = the_min_y; j <= the_max_y; j++) {
             Vec2 P(i, j);
             if (inside(v1, v2, v3, P)) {
                 setPixel(i, j, r, g, b, a);

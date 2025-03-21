@@ -43,7 +43,7 @@ int main()
 
     Vec2Test();
     cout << "Hello PhysicsAnimation" << endl;
-    system(command.c_str());
+   // system(command.c_str());
 
     return 0;
 }
