@@ -1,10 +1,32 @@
 #include "Rasterizer.hpp"
 #include "Render.hpp"
 #include "Vec2.hpp"
+#include "Vec3.hpp"
 #include <iostream>
 #include <string>
 using namespace std;
 
+void Vec3Test()
+{
+    Vec3 v1;
+    cout << "v1:" << v1 << endl;
+    Vec3 v2(2.0, 2.0,3.0);
+    cout << "v2:" << v2 << endl;
+
+    cout << "v1+v2" << v1 + v2 << endl;
+    cout << "v1-v2" << v1 - v2 << endl;
+    cout << "v2*3" << v2 * 3 << endl;
+    cout << "3*v2" << 3 * v2 << endl;
+    cout << "v2/4" << v2 / 4.0 << endl;
+    v1 += v2;
+    cout << "v1+=v2\nv1=" << v1 << endl;
+    v1 *= 2;
+    cout << "v1*=2\nv1=" << v1 << endl;
+    v1 -= v2;
+    cout << "v1-=v2\nv1=" << v1 << endl;
+    v1 /= 2.0;
+    cout << "v1/=2.0\nv1=" << v1 << endl;
+}
 void Vec2Test()
 {
     Vec2 v1;
@@ -42,6 +64,7 @@ int main()
     render.saveFile();
 
     Vec2Test();
+    Vec3Test();
     cout << "Hello PhysicsAnimation" << endl;
    // system(command.c_str());
 
